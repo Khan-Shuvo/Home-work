@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Responsive Page</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* General reset to remove default margins and paddings */
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box; /* Ensure padding and border are included in element's total width/height */
+        }
+
+        /* Main banner section */
+        .baner{
+            width: 100%;
+            height: 100vh; /* Full height of the viewport */
+            background-image: url(119652.jpg); /* Replace with the actual image path */
+            background-size: cover;
+            background-position: center;
+            display: flex; /* Use flexbox to vertically center content */
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Navbar styling */
+        .navbar{
+            width: 100%;
+            position: absolute; /* Position navbar at the top */
+            top: 0;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: flex-end; /* Align navbar to the right */
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        }
+
+        /* Navbar list items */
+        .navbar ul{
+            list-style: none;
+            display: flex;
+        }
+
+        /* Navbar links */
+        .navbar ul li{
+            margin: 0 10px;
+            position: relative;
+        }
+
+        /* Navbar link styling */
+        .navbar ul li a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        /* Underline animation on hover */
+        .navbar ul li::after{
+            content: '';
+            height: 3px;
+            width: 0%;
+            background: #009688;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: width 0.5s ease;
+        } 
+        .navbar ul li:hover::after{
+            width: 100%; /* Expand underline when hovering */
+        }
+
+        /* Main content section */
+        .content{
+            text-align: center;
+            color: #000;
+            padding: 20px;
+        }
+
+        /* Content paragraph */
+        .content p {
+            font-size: 1.2em; /* Slightly increase text size */
+            font-family: 'Franklin Gothic Medium';
+        }
+
+        /* Button styling */
+        button{
+            width: 150px; /* Increased width for larger screens */
+            padding: 15px;
+            margin: 20px 10px;
+            border-radius: 30px;
+            font-weight: bold;
+            border: 2px solid #009688;
+            background: transparent;
+            color: #55d3fb;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Button hover background animation */
+        button span{
+            background: #009688;
+            height: 100%;
+            width: 0%;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: width .5s ease;
+        }
+
+        /* Expand the background when hovered */
+        button:hover span{
+            width: 100%;
+        }
+
+        /* Remove button border on hover */
+        button:hover{
+            border: none;
+        }
+
+        /* Footer styling */
+        footer{
+            background: linear-gradient(to right, #00093c, #2d0b00);
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Footer content */
+        .foot h1, .foot p{
+            color: #fff;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            /* Adjust navbar for tablets and smaller screens */
+            .navbar{
+                justify-content: center; /* Center navbar on smaller screens */
+            }
+
+            .navbar ul{
+                flex-direction: column; /* Stack navbar links vertically */
+                text-align: center;
+            }
+
+            .navbar ul li{
+                margin: 10px 0;
+            }
+
+            /* Make content fit smaller screens */
+            .content p {
+                font-size: 1em; /* Reduce text size */
+            }
+
+            /* Resize button for smaller screens */
+            button{
+                width: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Adjust navbar padding and font size for mobile phones */
+            .navbar{
+                padding: 10px;
+            }
+
+            .navbar ul li a{
+                font-size: 14px; /* Smaller font for mobile screens */
+            }
+
+            /* Resize content text for smaller screens */
+            .content p {
+                font-size: 0.9em;
+            }
+
+            /* Button size for mobile screens */
+            button{
+                width: 100px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="baner">
+        <!-- Navigation bar -->
+        <div class="navbar">
+            <ul>
+                <li><a href="#"><b>Home</b></a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Us</a></li>
+                <li><a href="#">Img</a></li>
+            </ul>
+        </div> 
+
+        <!-- Main content area -->
+        <div class="content">
+            <h1>DESIGN YOUR PAGE</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, consequatur.</p>
+            <div>
+                <button type="button"><span></span>Search</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="foot">
+            <h1>Shuvo</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur <b></b>adipisicing elit. Sit, incidunt!</p>
+        </div>
+    </footer>
+</body>
+</html>
